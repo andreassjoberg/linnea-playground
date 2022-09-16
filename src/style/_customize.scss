@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Rubik:wght@700&display=swap");
+
+:root {
+  --linnea-darkest: #22223B;
+  --linnea-dark: #4A4E69;
+
+  --linnea-body-color: #f1faee;
+  --linnea-light: #F2E9E4;
+
+  --linnea-primary-button-color: #9A8C98;
+  --linnea-primary-button-color-hover: #C9ADA7;
+
+  --linnea-secondary-button-color: #C9ADA7;
+  --linnea-secondary-button-color-hover: #F2E9E4;
+
+  --linnea-body-font: "Open Sans", Arial, sans-serif;
+  --linnea-body-font-weight: 300;
+  --linnea-heading-font: "Rubik", Arial, sans-serif;
+  --linnea-heading-font-weight: 600;
+
+  // Toastify
+  --toastify-color-light: var(--linnea-light);
+  --toastify-color-dark: var(--linnea-darkest);
+  --toastify-color-info: var(--linnea-primary-button-color-hover);
+  --toastify-color-success: var(--bs-success);
+  --toastify-color-warning: var(--bs-warning);
+  --toastify-color-error: var(--bs-danger);
+
+  --toastify-text-color-info: var(--toastify-color-dark);
+  --toastify-text-color-success: var(--bs-gray-100);
+  --toastify-text-color-warning: var(--toastify-color-dark);
+  --toastify-text-color-error: var(--bs-gray-100);
+
+  // Bootstrap
+  --bs-body-bg: var(--linnea-dark);
+  --bs-body-color: var(--linnea-body-color);
+  --bs-body-font-family: var(--linnea-body-font);
+  --bs-body-font-weight: 300;
+  --bs-body-font-size: 14px;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: linear-gradient(to bottom,
+      var(--linnea-darkest),
+      var(--linnea-dark) 72%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  font-family: var(--linnea-body-font);
+  font-weight: var(--linnea-body-font-weight);
+  overflow-x: hidden;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--linnea-heading-font);
+  font-weight: var(--linnea-heading-font-weight);
+  text-transform: uppercase;
+  color: var(--linnea-body-color);
+}
+
+.h1,
+h1 {
+  font-size: 48px;
+}
+
+button.btn {
+  letter-spacing: 1px;
+  font-size: 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: var(--linnea-body-font);
+  font-weight: var(--linnea-body-font-weight);
+  transition: all 0.25s ease-in-out;
+  padding: 1em 2.5em;
+  border: 0 none;
+
+  &.btn-primary {
+    background-color: var(--linnea-primary-button-color);
+    color: var(--linnea-body-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--linnea-primary-button-color-hover);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--linnea-secondary-button-color);
+    color: var(--linnea-body-color);
+
+    &:hover,
+    &:focus {
+      background-color: var(--linnea-secondary-button-color-hover);
+    }
+  }
+}
+
+a {
+  color: var(--linnea-body-color);
+  transition: all 0.25s ease-in-out;
+
+  &:hover,
+  &:focus {
+    color: var(--linnea-primary-button-color);
+  }
+}
+
+.card {
+  border: 0;
+
+  .card-header {
+    background-color: var(--linnea-darkest);
+    color: var(--linnea-body-color);
+  }
+
+  .card-body {
+    background-color: var(--linnea-body-color);
+    color: var(--linnea-darkest);
+  }
+
+  .card-footer {
+    background-color: var(--linnea-light);
+    color: var(--linnea-darkest);
+    font-size: small;
+  }
+}
+
+.card.is-winner {
+  font-size: large;
+
+  .card-header {
+    color: var(--linnea-darkest);
+    background-color: var(--linnea-winner-color-first);
+    animation: sparkle 1s infinite;
+  }
+
+  .card-body {
+    font-family: var(--linnea-heading-font);
+    font-weight: var(--linnea-heading-font-weight);
+  }
+}
+
+
+.container {
+  padding-bottom: 60px;
+}
+
+.overlay {
+  opacity: 0.5;
+  background-color: #000;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.loader div {
+  position: absolute;
+  top: 27px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader div:nth-child(1) {
+  left: 6px;
+  animation: loader1 0.6s infinite;
+}
+
+.loader div:nth-child(2) {
+  left: 6px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(3) {
+  left: 26px;
+  animation: loader2 0.6s infinite;
+}
+
+.loader div:nth-child(4) {
+  left: 45px;
+  animation: loader3 0.6s infinite;
+}
+
+@keyframes loader1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes loader3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes loader2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(19px, 0);
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    background-color: var(--linnea-winner-color-first);
+  }
+
+  50% {
+    background-color: var(--linnea-winner-color-second);
+  }
+
+  100% {
+    background-color: var(--linnea-winner-color-first);
+  }
+}
